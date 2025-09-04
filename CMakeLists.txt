@@ -23,6 +23,11 @@ qt_add_qml_module(appMarbleQml
         QML_FILES toolsComponent/IconButtonItem.qml
         RESOURCES icons/minus.png icons/plus.svg
         RESOURCES icons/location.png
+        QML_FILES layerComponent/LayerItems.qml
+        RESOURCES icons/earth.png
+        RESOURCES fonts/Poppins-Regular.ttf
+        QML_FILES layerComponent/ButtonItem.qml
+        RESOURCES icons/Area.png icons/Layers.png icons/loacation.png icons/menu.png icons/search.png icons/weather.png
 
 )
 
@@ -50,3 +55,5 @@ install(TARGETS appMarbleQml
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/icons
      DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/fonts
+      DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

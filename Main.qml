@@ -56,4 +56,10 @@ Window {
 
 
     }
+    LayerItems{
+        anchors.left:parent.left
+        anchors.leftMargin: 10
+        anchors.top:parent.top
+        anchors.topMargin: 15
+    }
 }
