@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="0.32811in" height="0.328106in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 4.7 4.7"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <font id="FontID0" horiz-adv-x="645" font-variant="normal" class="str0" style="fill-rule:nonzero" font-style="normal" font-weight="400">
+	<font-face 
+		font-family="Segoe MDL2 Assets">
+		<font-face-src>
+			<font-face-name name="Segoe MDL2 Assets"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="" horiz-adv-x="1000" d="M990.661 884.339l-384.656 -384.339 384.656 -384.339 -106.323 -106.323 -384.339 384.656 -384.339 -384.656 -106.323 106.323 384.656 384.339 -384.656 384.339 106.323 106.323 384.339 -384.656 384.339 384.656 106.323 -106.323z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Segoe MDL2 Assets";font-variant:normal;font-style:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+    .str0 {stroke-width:83.9;stroke-miterlimit:2.61313}
+    .str1 {stroke:#FEFEFE;stroke-width:0.3;stroke-miterlimit:2.61313}
+    .fil0 {fill:#FEFEFE}
+    .fnt0 {font-weight:normal;font-size:3.56px;font-family:'Segoe MDL2 Assets'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g transform="matrix(0.707107 0.707107 -0.707107 0.707107 -155.953 -73.869)">
+   <text x="164.06" y="-56.26"  class="fil0 str1 fnt0"></text>
+  </g>
+ </g>
+</svg>
