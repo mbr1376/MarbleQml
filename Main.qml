@@ -4,7 +4,8 @@ Window {
     width: 640
     height: 480
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("Gis System")
+    visibility: Window.FullScreen
     MarbleItem
     {
         anchors.fill: parent
@@ -24,15 +25,35 @@ Window {
         height: 600
         showFrameRate: false
         projection: MarbleItem.Spherical
-        mapThemeId: earth/openstreetmap/openstreetmap.dgml
-        showAtmosphere: false
+        mapThemeId: "earth/openstreetmap/openstreetmap.dgml"
+        showAtmosphere: true
         showCompass: false
-        showClouds: false
+        showClouds: true
         showCrosshairs: false
         showGrid: false
         showOverviewMap: false
         showOtherPlaces: false
         showScaleBar: false
         showBackground: true
+
+        //center: Coordinate { longitude: 142.2; latitude: 11.35 }
+    }
+    Component.onCompleted: {
+        marble.centerOn(51.3890,35.6892,true)
+        marble.setZoom(5000)
+    }
+    ToolsItem{
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+        onZooming:function(val){
+            marble.zoomIn()
+        }
+        onZoomout:function(val){
+            marble.zoomOut()
+        }
+
+
+
     }
 }

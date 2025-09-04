@@ -1,7 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <qapplication.h>
-
+#include <QtWebEngineQuick>
+#include <marble/PositionTracking.h>
 
 int main(int argc, char *argv[])
 {
@@ -9,6 +10,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
+        QtWebEngineQuick::initialize();
     engine.addImportPath("/usr/local/lib/qml");
     //qmlRegisterType<MarbleMapItem>("CustomMarble", 1, 0, "MarbleMap");
     QObject::connect(
