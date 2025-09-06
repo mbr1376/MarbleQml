@@ -2,12 +2,29 @@ import QtQuick 2.15
 import QtQuick.Layouts
 
 Item {
+    id:_root
     width: 600
     height: 60
+    property var loadedObjectLayerMap: null
     FontLoader {
             id: _Font
             source: "../fonts/Poppins-Regular.ttf"
         }
+    function loadFileAt(filename, xpos, ypos) {
+           var component = Qt.createComponent(filename)
+           if (component.status === Component.Ready) {
+               var obj = component.createObject(parent, { x: xpos, y: ypos })
+               if (obj === null) {
+                   console.log("Error creating object")
+               } else {
+                   console.log("Loaded", filename, "at", xpos, ypos)
+               }
+               return obj
+           } else {
+               console.log("Component error:", component.errorString())
+               return null
+           }
+       }
     Rectangle{
         id:_rec
         anchors.left: parent.left
@@ -64,10 +81,18 @@ Item {
         ButtonItem{
             pathicon: "../icons/menu.png"
             Layout.alignment: Qt.AlignHCenter
+
         }
         ButtonItem{
             pathicon: "../icons/Layers.png"
             Layout.alignment: Qt.AlignHCenter
+            onClicked:function(check) {
+               if (check){
+                  loadedObjectLayerMap = loadFileAt("LayerMap.qml",rowLayout.x + 10,rowLayout.y+80)
+               }else
+                   loadedObjectLayerMap.destroy()
+
+            }
         }
         ButtonItem{
             pathicon: "../icons/Area.png"
