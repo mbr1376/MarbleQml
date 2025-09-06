@@ -6,13 +6,16 @@
 
 int main(int argc, char *argv[])
 {
-        //qInstallMessageHandler(customMessageHandler);  // نصب هندلر
+    QCoreApplication::setAttribute(Qt::AA_UseSoftwareOpenGL);
+    QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
+    QLoggingCategory::setFilterRules("marble.debug=false\nmarble_lib.debug=false");
+
     QApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
         QtWebEngineQuick::initialize();
     engine.addImportPath("/usr/local/lib/qml");
-    //qmlRegisterType<MarbleMapItem>("CustomMarble", 1, 0, "MarbleMap");
+
     QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreationFailed,
