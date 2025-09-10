@@ -1,5 +1,6 @@
 import QtQuick
 import org.kde.marble
+import "aboutComponent" as About
 Window {
     width: 640
     height: 480
@@ -65,5 +66,10 @@ Window {
 
             marble.mapThemeId = path
         }
+    }
+    About.LayerAbout{
+        anchors.bottom: parent.bottom
+        anchors.margins: -10
+        anchors.horizontalCenter: parent.horizontalCenter
     }
 }
