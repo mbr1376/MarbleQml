@@ -1,8 +1,14 @@
 import QtQuick 2.15
 
 Item {
+	id:_root
 	width: 400
 	height: 100
+	signal itemClicked(string source);
+
+
+
+	property int  selectedIndex : 0
 
 	ListModel {
 		id:_model
@@ -12,15 +18,15 @@ Item {
 		}
 		ListElement {
 			pathimage: "../icons/mapLayer/bluemarble-preview.png"
-			source: "earth/openstreetmap/blumarble.dgml"
+			source: "earth/bluemarble/bluemarble.dgml"
 		}
 		ListElement {
 			pathimage: "../icons/mapLayer/precip-dec-preview.png"
-			source: "earth/openstreetmap/precip-dec.dgml"
+			source: "earth/precip-dec/precip-dec.dgml"
 		}
 		ListElement {
 			pathimage: "../icons/mapLayer/vectorosm-preview.png"
-			source: "earth/openstreetmap/vectorosm.dgml"
+			source: "earth/vectorosm/vectorosm.dgml"
 		}
 
 	}
@@ -33,8 +39,8 @@ Item {
 				 Rectangle{
 					 anchors.fill: parent
 					 radius: 10
-					 border.width: 4
-					 border.color: "#56BAE1"
+					 border.width: 1
+					 border.color: _root.selectedIndex === index ? "#206CC9" : "#56BAE1"
 					 color: "transparent"
 					 z:1
 					 Image {
@@ -43,6 +49,17 @@ Item {
 						 anchors.margins: 4
 						 source: pathimage
 						 fillMode: Image.PreserveAspectFit
+
+						 }
+					 MouseArea{
+						 hoverEnabled: true
+						 anchors.fill: parent
+						 onEntered: parent.color = "#5556BAE1"
+						 onExited: parent.color = "transparent"
+						 onClicked: {
+							 _root.selectedIndex = index
+							 _root.itemClicked(source)
+						 }
 					 }
 				 }
 			 }

@@ -61,5 +61,9 @@ Window {
         anchors.leftMargin: 10
         anchors.top:parent.top
         anchors.topMargin: 15
+        onMapChanged:function(path){
+
+            marble.mapThemeId = path
+        }
     }
 }

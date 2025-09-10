@@ -6,6 +6,8 @@ Item {
     width: 600
     height: 60
     property var loadedObjectLayerMap: null
+    signal mapChanged(string path);
+
     FontLoader {
             id: _Font
             source: "../fonts/Poppins-Regular.ttf"
@@ -17,7 +19,11 @@ Item {
                if (obj === null) {
                    console.log("Error creating object")
                } else {
-                   console.log("Loaded", filename, "at", xpos, ypos)
+                   obj.itemClicked.connect(function (path) {
+
+                        _root.mapChanged(path)
+                                               })
+                   //console.log("Loaded", filename, "at", xpos, ypos)
                }
                return obj
            } else {
