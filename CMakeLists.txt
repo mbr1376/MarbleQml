@@ -32,6 +32,7 @@ qt_add_qml_module(appMarbleQml
         RESOURCES icons/mapLayer/openstreetmap-preview.png
         RESOURCES icons/mapLayer/bluemarble-preview.png
         RESOURCES icons/mapLayer/bluemarble-preview.png icons/mapLayer/openstreetmap-preview.png icons/mapLayer/precip-dec-preview.png icons/mapLayer/vectorosm-preview.png
+        QML_FILES layerComponent/utils.js
 
 )
 

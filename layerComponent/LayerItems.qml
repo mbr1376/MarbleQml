@@ -1,6 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Layouts
-
+import "utils.js" as Utils
 Item {
     id:_root
     width: 600
@@ -12,25 +12,6 @@ Item {
             id: _Font
             source: "../fonts/Poppins-Regular.ttf"
         }
-    function loadFileAt(filename, xpos, ypos) {
-           var component = Qt.createComponent(filename)
-           if (component.status === Component.Ready) {
-               var obj = component.createObject(parent, { x: xpos, y: ypos })
-               if (obj === null) {
-                   console.log("Error creating object")
-               } else {
-                   obj.itemClicked.connect(function (path) {
-
-                        _root.mapChanged(path)
-                                               })
-                   //console.log("Loaded", filename, "at", xpos, ypos)
-               }
-               return obj
-           } else {
-               console.log("Component error:", component.errorString())
-               return null
-           }
-       }
     Rectangle{
         id:_rec
         anchors.left: parent.left
@@ -94,7 +75,7 @@ Item {
             Layout.alignment: Qt.AlignHCenter
             onClicked:function(check) {
                if (check){
-                  loadedObjectLayerMap = loadFileAt("LayerMap.qml",rowLayout.x + 10,rowLayout.y+80)
+                  loadedObjectLayerMap = Utils.loadFileAt("LayerMap.qml",rowLayout.x + 10,rowLayout.y+80,_root,_root)
                }else
                    loadedObjectLayerMap.destroy()
 
