@@ -19,6 +19,22 @@ Item {
         width: 180
         radius: 50
         color: "#88000000"
+        MouseArea{
+            anchors.fill: parent
+            property bool _check: true
+            onClicked: {
+                if (_check){
+
+                   loadedObjectLayerMap = Utils.loadFileAt("StartItem.qml",_rec.x,_rec.y+70,_root)
+                    _check =false
+                }else{
+
+                    loadedObjectLayerMap.closeAndDestroy()
+                    _check =true
+                }
+            }
+
+        }
 
         Image {
             id: image

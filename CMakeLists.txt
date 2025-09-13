@@ -36,6 +36,8 @@ qt_add_qml_module(appMarbleQml
         QML_FILES aboutComponent/LayerAbout.qml
         RESOURCES fonts/Roboto-Bold.ttf
         RESOURCES icons/arrow.png
+        RESOURCES icons/ghost.svg
+        QML_FILES layerComponent/StartItem.qml
 
 )
 

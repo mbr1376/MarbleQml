@@ -1,6 +1,8 @@
 import QtQuick
 import org.kde.marble
 import "aboutComponent" as About
+import "layerComponent" as Layer
+import "toolsComponent" as Tools
 Window {
     width: 640
     height: 480
@@ -36,14 +38,17 @@ Window {
         showOtherPlaces: false
         showScaleBar: false
         showBackground: true
-
-        //center: Coordinate { longitude: 142.2; latitude: 11.35 }
+        Placemark {
+                //coordinate: QtPositioning.coordinate(35.6892, 51.3890) // عرض جغرافیایی، طول جغرافیایی
+                //iconSource: "qrc:/icons/marker.png"  // مسیر آیکون مارکر، می‌توانید آیکون دلخواه خود را انتخاب کنید
+                //visible: true
+            }
     }
     Component.onCompleted: {
         marble.centerOn(51.3890,35.6892,true)
         marble.setZoom(5000)
     }
-    ToolsItem{
+    Tools.ToolsItem{
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         anchors.leftMargin: 10
@@ -57,7 +62,7 @@ Window {
 
 
     }
-    LayerItems{
+    Layer.LayerItems{
         anchors.left:parent.left
         anchors.leftMargin: 10
         anchors.top:parent.top

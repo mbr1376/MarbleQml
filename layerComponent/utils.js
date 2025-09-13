@@ -15,3 +15,17 @@ function loadFileAt(filename, xpos, ypos, parent, _root) {
         return null
     }
 }
+
+function loadFileAt(filename, xpos, ypos,parent) {
+    var component = Qt.createComponent(filename)
+    if (component.status === Component.Ready) {
+        var obj = component.createObject(parent, { x: xpos, y: ypos })
+        if (obj === null) {
+            console.log("Error creating object")
+        }
+        return obj
+    } else {
+        console.log("Component error:", component.errorString())
+        return null
+    }
+}
