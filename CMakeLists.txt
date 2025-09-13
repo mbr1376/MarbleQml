@@ -38,6 +38,7 @@ qt_add_qml_module(appMarbleQml
         RESOURCES icons/arrow.png
         RESOURCES icons/ghost.svg
         QML_FILES layerComponent/StartItem.qml
+        RESOURCES icons/powerOff.png icons/settings.png
 
 )
 
