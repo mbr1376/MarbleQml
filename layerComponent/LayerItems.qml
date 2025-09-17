@@ -6,6 +6,15 @@ Item {
     width: 600
     height: 60
     property var loadedObjectLayerMap: null
+    property var loadedObjectStarter: null
+
+
+
+    //signal
+    signal powerOff();
+    signal showSettingsMap();
+    signal showSettingsLayer();
+
     signal mapChanged(string path);
 
     FontLoader {
@@ -25,11 +34,14 @@ Item {
             onClicked: {
                 if (_check){
 
-                   loadedObjectLayerMap = Utils.loadFileAt("StartItem.qml",_rec.x,_rec.y+70,_root)
+                   loadedObjectStarter = Utils.loadFileAt("StartItem.qml",_rec.x,_rec.y+70,_root)
+                    loadedObjectStarter.powerOff.connect(function(){powerOff()})
+                    loadedObjectStarter.showSettingsLayer.connect(function(){showSettingsLayer()})
+                    loadedObjectStarter.showSettingsMap.connect(function(){showSettingsMap()})
                     _check =false
                 }else{
 
-                    loadedObjectLayerMap.closeAndDestroy()
+                    loadedObjectStarter.closeAndDestroy()
                     _check =true
                 }
             }

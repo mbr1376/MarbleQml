@@ -71,6 +71,9 @@ Window {
 
             marble.mapThemeId = path
         }
+         onPowerOff: close()
+         onShowSettingsLayer: console.log("show  layer")
+         onShowSettingsMap:  console.log("show  Map")
     }
     About.LayerAbout{
         anchors.bottom: parent.bottom

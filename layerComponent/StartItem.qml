@@ -6,6 +6,9 @@ Item {
     id:_root
     width: 180
     height: _model.count * 60
+    signal powerOff()
+     signal showSettingsMap()
+     signal showSettingsLayer()
     FontLoader {
             id: _Font
             source: "../fonts/Roboto-Bold.ttf"
@@ -13,6 +16,8 @@ Item {
     Component{
         id:contectDelegate
         Item {
+            id:itemDelegate
+            property int _idItem: iditem
                      width: 150; height: 40
                      Row {
                          spacing: 10
@@ -39,10 +44,12 @@ Item {
                          onEntered: _txt.color = "#4F8BD4"
                          onExited: _txt.color = "white"
                          onClicked: {
-                             if (name === "Power OFF"){
-
-                             }
-
+                             if (itemDelegate._idItem === 0)
+                                showSetingsLayer()
+                             else if (itemDelegate._idItem === 1)
+                                 showSettingsMap()
+                             else if(itemDelegate._idItem === 2)
+                                powerOff()
                          }
                      }
                  }
@@ -50,14 +57,17 @@ Item {
     ListModel {
         id:_model
         ListElement {
+            iditem:0
             name: "Setting Layer"
             pathfile: "../icons/settings.png"
         }
         ListElement {
+            iditem:1
             name: "Setting Map"
             pathfile: "../icons/settings.png"
         }
         ListElement {
+            iditem:2
             name: "Power OFF"
             pathfile: "../icons/powerOff.png"
         }
