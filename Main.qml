@@ -43,10 +43,18 @@ Window {
                 //iconSource: "qrc:/icons/marker.png"  // مسیر آیکون مارکر، می‌توانید آیکون دلخواه خود را انتخاب کنید
                 //visible: true
             }
+      onZoomChanged:function(){
+          if (zoom < 1500){
+              marble.centerOn(51.3890,35.6892,true)
+              setZoom(1500)
+
+          }
+      }
     }
     Component.onCompleted: {
         marble.centerOn(51.3890,35.6892,true)
         marble.setZoom(5000)
+
     }
     Tools.ToolsItem{
         anchors.verticalCenter: parent.verticalCenter

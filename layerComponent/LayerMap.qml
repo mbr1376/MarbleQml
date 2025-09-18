@@ -58,6 +58,7 @@ Item {
 						 onExited: parent.color = "transparent"
 						 onClicked: {
 							 _root.selectedIndex = index
+							 console.log(source)
 							 _root.itemClicked(source)
 						 }
 					 }

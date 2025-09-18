@@ -103,7 +103,7 @@ Item {
             Layout.alignment: Qt.AlignHCenter
             onClicked:function(check) {
                if (check){
-                  loadedObjectLayerMap = Utils.loadFileAt("LayerMap.qml",rowLayout.x + 10,rowLayout.y+80,_root,_root)
+                  loadedObjectLayerMap = Utils.loadFileAtMap("LayerMap.qml",rowLayout.x + 10,rowLayout.y+80,_root,_root)
                }else
                    loadedObjectLayerMap.destroy()
 

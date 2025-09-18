@@ -1,4 +1,4 @@
-function loadFileAt(filename, xpos, ypos, parent, _root) {
+function loadFileAtMap(filename, xpos, ypos, parent, _root) {
     var component = Qt.createComponent(filename)
     if (component.status === Component.Ready) {
         var obj = component.createObject(parent, { x: xpos, y: ypos })
