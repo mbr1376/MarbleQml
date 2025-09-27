@@ -22,7 +22,6 @@ qt_add_qml_module(appMarbleQml
         org.kde.marble
         QML_FILES toolsComponent/IconButtonItem.qml
         RESOURCES icons/minus.png icons/plus.svg
-        RESOURCES icons/location.png
         QML_FILES layerComponent/LayerItems.qml
         RESOURCES icons/earth.png
         RESOURCES fonts/Poppins-Regular.ttf
@@ -39,6 +38,8 @@ qt_add_qml_module(appMarbleQml
         RESOURCES icons/ghost.svg
         QML_FILES layerComponent/StartItem.qml
         RESOURCES icons/powerOff.png icons/settings.png
+        RESOURCES icons/home-location.png
+        RESOURCES icons/locations.png
 
 )
 

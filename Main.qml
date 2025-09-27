@@ -66,6 +66,7 @@ Window {
         onZoomout:function(val){
             marble.zoomOut()
         }
+        onGoToHome: marble.centerOn(51.3890,35.6892,true)
 
 
 

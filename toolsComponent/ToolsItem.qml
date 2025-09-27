@@ -6,6 +6,7 @@ Item {
     height: 360
     signal zooming()
     signal zoomout()
+    signal goToHome()
 
     Rectangle{
         id:_rec
@@ -43,9 +44,15 @@ Item {
                anchors.topMargin: 40
                anchors.bottomMargin: 40
                IconButtonItem{
+                    Layout.alignment: Qt.AlignHCenter
+                    pathIcon: "../icons/home-location.png"
+                    onClicked: goToHome()
+               }
+
+               IconButtonItem{
 
                     Layout.alignment: Qt.AlignHCenter
-                    pathIcon: "../icons/location.png"
+                    pathIcon: "../icons/locations.png"
                    // onClicked: zooming()
                }
                IconButtonItem{
